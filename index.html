@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning n NNNotes</title>
   <title>Morning Notessssss</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
@@ -17,7 +19,10 @@
       --line: #d9ddd4;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       color: var(--ink);
@@ -41,8 +46,17 @@
       justify-content: space-between;
     }
 
-    .mark { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; }
-    .date { color: var(--muted); font-size: .82rem; }
+    .mark {
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: .82rem;
+    }
 
     main {
       max-width: 1180px;
@@ -53,7 +67,14 @@
       align-items: center;
     }
 
-    .eyebrow { color: var(--coral); font-weight: 700; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow {
+      color: var(--coral);
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
     h1 {
       max-width: 680px;
       margin: 18px 0 24px;
@@ -63,10 +84,23 @@
       letter-spacing: -.04em;
       font-weight: 700;
     }
-    .intro { max-width: 480px; color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-    button, .link-button {
+    .intro {
+      max-width: 480px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    button,
+    .link-button {
       border: 0;
       cursor: pointer;
       font: inherit;
@@ -74,9 +108,25 @@
       text-decoration: none;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .primary { padding: 15px 21px; color: #fff; background: var(--ink); border-radius: 4px; box-shadow: 5px 5px 0 var(--coral); }
-    .secondary { padding: 15px 5px; color: var(--ink); background: transparent; }
-    button:hover, .link-button:hover { transform: translateY(-2px); }
+
+    .primary {
+      padding: 15px 21px;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 4px;
+      box-shadow: 5px 5px 0 var(--coral);
+    }
+
+    .secondary {
+      padding: 15px 5px;
+      color: var(--ink);
+      background: transparent;
+    }
+
+    button:hover,
+    .link-button:hover {
+      transform: translateY(-2px);
+    }
 
     .note {
       position: relative;
@@ -86,23 +136,80 @@
       box-shadow: 18px 20px 0 rgba(30, 41, 37, .08);
       transform: rotate(2deg);
     }
-    .note::before { content: ''; position: absolute; top: -14px; left: 42%; width: 76px; height: 26px; background: rgba(233, 123, 91, .65); transform: rotate(-5deg); }
-    .note-label { color: var(--muted); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
-    .note h2 { margin: 28px 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.08; }
-    .note p { color: var(--muted); line-height: 1.7; }
-    .rule { height: 1px; margin: 30px 0 18px; background: var(--line); }
-    .note-footer { display: flex; justify-content: space-between; color: var(--muted); font-size: .78rem; }
 
-    .message { min-height: 1.4em; margin-top: 18px; color: var(--coral); font-size: .88rem; }
+    .note::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 42%;
+      width: 76px;
+      height: 26px;
+      background: rgba(233, 123, 91, .65);
+      transform: rotate(-5deg);
+    }
+
+    .note-label {
+      color: var(--muted);
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .note h2 {
+      margin: 28px 0 20px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.08;
+    }
+
+    .note p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .rule {
+      height: 1px;
+      margin: 30px 0 18px;
+      background: var(--line);
+    }
+
+    .note-footer {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .message {
+      min-height: 1.4em;
+      margin-top: 18px;
+      color: var(--coral);
+      font-size: .88rem;
+    }
 
     @media (max-width: 760px) {
-      .page { padding-top: 22px; }
-      main { grid-template-columns: 1fr; margin-top: 88px; gap: 64px; }
-      h1 { font-size: clamp(3.5rem, 17vw, 6rem); }
-      .note { max-width: 520px; margin: 0 auto; }
+      .page {
+        padding-top: 22px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+        margin-top: 88px;
+        gap: 64px;
+      }
+
+      h1 {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+      }
+
+      .note {
+        max-width: 520px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <nav aria-label="Main navigation">
@@ -114,7 +221,8 @@
       <section aria-labelledby="page-title">
         <div class="eyebrow">A small pause</div>
         <h1 id="page-title">Make room for a good thought.</h1>
-        <p class="intro">A quiet corner for collecting the ideas, questions, and little observations that make an ordinary day feel more considered.</p>
+        <p class="intro">A quiet corner for collecting the ideas, questions, and little observations that make an
+          ordinary day feel more considered.</p>
         <div class="actions">
           <button class="primary" id="noteButton" type="button">Write a note</button>
           <a class="link-button secondary" href="#featured">Read today’s note <span aria-hidden="true">↗</span></a>
@@ -125,7 +233,8 @@
       <article class="note" id="featured">
         <div class="note-label">Featured note · 08:14</div>
         <h2>Attention is a form of generosity.</h2>
-        <p>Notice what keeps returning to you. It may not be an interruption. It may be the part of the day asking to be met.</p>
+        <p>Notice what keeps returning to you. It may not be an interruption. It may be the part of the day asking to be
+          met.</p>
         <div class="rule"></div>
         <div class="note-footer"><span>01 / 24</span><span>Read in 2 min</span></div>
       </article>
@@ -143,4 +252,5 @@
     });
   </script>
 </body>
+
 </html>
